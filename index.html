@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edge - Project Selling</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #6200ea, #bb86fc);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #6200ea, #bb86fc);
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .projects h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #bb86fc;
+    }
+
+    .project-options {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #6200ea, #bb86fc);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(98, 0, 234, 0.4);
+    }
+
+    /* Horizontal Scrollable Project List */
+    .project-list {
+      display: flex;
+      overflow-x: auto;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      scrollbar-width: thin;
+      scrollbar-color: #6200ea #1a1a1a;
+    }
+
+    .project-list::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .project-list::-webkit-scrollbar-thumb {
+      background: #6200ea;
+      border-radius: 10px;
+    }
+
+    .project-list::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    .project-card {
+      background: #2c2c2c;
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 300px;
+      flex: 0 0 auto;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      color: #bb86fc;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      background: #2c2c2c;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #6200ea;
+    }
+
+    /* Project Details Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #2c2c2c;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 400px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #bb86fc;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+
+    .modal-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-content .cost {
+      font-size: 1.2rem;
+      color: #bb86fc;
+    }
+
+    .modal-content .offer-price {
+      font-size: 1.2rem;
+      color: #4caf50;
+    }
+
+    .modal-content button {
+      background: linear-gradient(135deg, #6200ea, #bb86fc);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .modal-content button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(135deg, #6200ea, #bb86fc);
+      color: white;
+      margin-top: 2rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="" alt="">
+      <h1>Edge</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#software">Software Projects</a></li>
+        <li><a href="#hardware">Hardware Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="hero">
+      <h2>Welcome to Edge</h2>
+      <p>Your one-stop destination for innovative software and hardware projects.</p>
+    </section>
+
+    <!-- Software Projects Section -->
+    <section id="software" class="projects">
+      <h2>Software Projects</h2>
+      <div class="project-options">
+        <a href="#miniproject-software" class="btn">Mini Projects</a>
+        <a href="#mainproject-software" class="btn">Main Projects</a>
+      </div>
+    </section>
+
+    <!-- Hardware Projects Section -->
+    <section id="hardware" class="projects">
+      <h2>Hardware Projects</h2>
+      <div class="project-options">
+        <a href="#miniproject-hardware" class="btn">Mini Projects</a>
+        <a href="#mainproject-hardware" class="btn">Main Projects</a>
+      </div>
+    </section>
+
+    <!-- Mini Projects Section (Software) -->
+    <section id="miniproject-software" class="projects">
+      <h2>Mini Projects - Software</h2>
+      <div class="project-list">
+        <div class="project-card" onclick="showProjectDetails('Project 1', 'A mini software project for beginners.', 50, 40, 'images/project1.jpg')">
+          <img src="images/project1.jpg" alt="Project 1">
+          <h3>Project 1</h3>
+          <p>Cost: $50</p>
+        </div>
+        <div class="project-card" onclick="showProjectDetails('Project 2', 'A mini software project for intermediate learners.', 75, 60, 'images/project2.jpg')">
+          <img src="images/project2.jpg" alt="Project 2">
+          <h3>Project 2</h3>
+          <p>Cost: $75</p>
+        </div>
+        <!-- Add more projects here -->
+      </div>
+      <a href="#software" class="back-btn">Back</a>
+    </section>
+
+    <!-- Main Projects Section (Software) -->
+    <section id="mainproject-software" class="projects">
+      <h2>Main Projects - Software</h2>
+      <div class="project-list">
+        <div class="project-card" onclick="showProjectDetails('Project 3', 'A main software project for advanced learners.', 150, 120, 'images/project3.jpg')">
+          <img src="images/project3.jpg" alt="Project 3">
+          <h3>Project 3</h3>
+          <p>Cost: $150</p>
+        </div>
+        <div class="project-card" onclick="showProjectDetails('Project 4', 'A main software project for professionals.', 200, 180, 'images/project4.jpg')">
+          <img src="images/project4.jpg" alt="Project 4">
+          <h3>Project 4</h3>
+          <p>Cost: $200</p>
+        </div>
+        <!-- Add more projects here -->
+      </div>
+      <a href="#software" class="back-btn">Back</a>
+    </section>
+
+    <!-- Mini Projects Section (Hardware) -->
+    <section id="miniproject-hardware" class="projects">
+      <h2>Mini Projects - Hardware</h2>
+      <div class="project-list">
+        <div class="project-card" onclick="showProjectDetails('Project 5', 'A mini hardware project for beginners.', 60, 50, 'images/project5.jpg')">
+          <img src="images/project5.jpg" alt="Project 5">
+          <h3>Project 5</h3>
+          <p>Cost: $60</p>
+        </div>
+        <div class="project-card" onclick="showProjectDetails('Project 6', 'A mini hardware project for intermediate learners.', 90, 75, 'images/project6.jpg')">
+          <img src="images/project6.jpg" alt="Project 6">
+          <h3>Project 6</h3>
+          <p>Cost: $90</p>
+        </div>
+        <!-- Add more projects here -->
+      </div>
+      <a href="#hardware" class="back-btn">Back</a>
+    </section>
+
+    <!-- Main Projects Section (Hardware) -->
+    <section id="mainproject-hardware" class="projects">
+      <h2>Main Projects - Hardware</h2>
+      <div class="project-list">
+        <div class="project-card" onclick="showProjectDetails('Project 7', 'A main hardware project for advanced learners.', 180, 150, 'images/project7.jpg')">
+          <img src="images/project7.jpg" alt="Project 7">
+          <h3>Project 7</h3>
+          <p>Cost: $180</p>
+        </div>
+        <div class="project-card" onclick="showProjectDetails('Project 8', 'A main hardware project for professionals.', 220, 200, 'images/project8.jpg')">
+          <img src="images/project8.jpg" alt="Project 8">
+          <h3>Project 8</h3>
+          <p>Cost: $220</p>
+        </div>
+        <!-- Add more projects here -->
+      </div>
+      <a href="#hardware" class="back-btn">Back</a>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div id="project-details-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="Project Image">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+        <p class="cost">Cost: <span id="modal-cost"></span></p>
+        <p class="offer-price">Offer Price: <span id="modal-offer-price"></span></p>
+        <button onclick="openEmailClient()">Request Project</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p> contact:-projecthari2024@gmail.com</p>
+    <p>&copy; 2024 Edge. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Function to show project details modal
+    function showProjectDetails(title, description, cost, offerPrice, image) {
+      document.getElementById('modal-image').src = image;
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-description').textContent = description;
+      document.getElementById('modal-cost').textContent = `$${cost}`;
+      document.getElementById('modal-offer-price').textContent = `$${offerPrice}`;
+      document.getElementById('project-details-modal').style.display = 'flex';
+    }
+
+    // Function to close modal
+    function closeModal() {
+      document.getElementById('project-details-modal').style.display = 'none';
+    }
+
+    // Function to open email client with pre-filled details
+    function openEmailClient() {
+      const projectName = document.getElementById('modal-title').textContent;
+      const projectCost = document.getElementById('modal-cost').textContent;
+      const subject = `Project Request: ${projectName}`;
+      const body = `Hello,\n\nI am interested in the following project:\n\nProject Name: ${projectName}\nProject Cost: ${projectCost}\n\nPlease contact me for further details.\n\nThank you!`;
+      const email = 'projecthari2024@gmail.com'; // Replace with your email
+
+      // Create mailto link
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Open email client
+      window.location.href = mailtoLink;
+    }
+  </script>
+</body>
+</html>
