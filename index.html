@@ -7,276 +7,279 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
   <style>
     /* General Styles */
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #1a1a1a;
-      color: #ffffff;
-    }
+  /* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #6200ea, #bb86fc);
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+/* Header */
+header {
+  background: linear-gradient(135deg, #000000, #007bff);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+}
 
-    .logo img {
-      height: 40px;
-      margin-right: 10px;
-    }
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
 
-    .logo h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
 
-    nav ul li a {
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
+nav ul li a {
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
 
-    nav ul li a:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, #007bff, #00d4ff);
-      color: white;
-    }
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #000000, #007bff);
+  color: white;
+}
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      animation: fadeIn 1.5s ease-in-out;
-    }
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
 
-    .hero p {
-      font-size: 1.2rem;
-      animation: fadeIn 2s ease-in-out;
-    }
+.hero p {
+  font-size: 1.2rem;
+  animation: fadeIn 2s ease-in-out;
+}
 
-    /* Projects Section */
-    .projects {
-      padding: 2rem;
-      text-align: center;
-    }
+/* Projects Section */
+.projects {
+  padding: 2rem;
+  text-align: center;
+}
 
-    .projects h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #bb86fc;
-    }
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #007bff;
+}
 
-    .project-options {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+.project-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-    .btn {
-      background: linear-gradient(135deg, #6200ea, #bb86fc);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 25px;
-      font-size: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.btn {
+  background: linear-gradient(135deg, #000000, #007bff);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(98, 0, 234, 0.4);
-    }
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
 
-    /* Horizontal Scrollable Project List */
-    .project-list {
-      display: flex;
-      overflow-x: auto;
-      gap: 1.5rem;
-      padding: 1rem 0;
-      scrollbar-width: thin;
-      scrollbar-color: #6200ea #1a1a1a;
-    }
+/* Horizontal Scrollable Project List */
+.project-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #007bff #1a1a1a;
+}
 
-    .project-list::-webkit-scrollbar {
-      height: 8px;
-    }
+.project-list::-webkit-scrollbar {
+  height: 8px;
+}
 
-    .project-list::-webkit-scrollbar-thumb {
-      background: #6200ea;
-      border-radius: 10px;
-    }
+.project-list::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 10px;
+}
 
-    .project-list::-webkit-scrollbar-track {
-      background: #1a1a1a;
-    }
+.project-list::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
 
-    .project-card {
-      background: #2c2c2c;
-      padding: 1.5rem;
-      border-radius: 10px;
-      width: 300px;
-      flex: 0 0 auto;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
+.project-card {
+  background: #2c2c2c;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 300px;
+  flex: 0 0 auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      object-fit: cover;
-    }
+.project-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
 
-    .project-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
 
-    .project-card p {
-      font-size: 1rem;
-      color: #bb86fc;
-    }
+.project-card p {
+  font-size: 1rem;
+  color: #007bff;
+}
 
-    .back-btn {
-      display: inline-block;
-      margin-top: 2rem;
-      background: #2c2c2c;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 25px;
-      transition: background 0.3s ease;
-    }
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  background: #2c2c2c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
 
-    .back-btn:hover {
-      background: #6200ea;
-    }
+.back-btn:hover {
+  background: #007bff;
+}
 
-    /* Project Details Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-    }
+/* Project Details Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
 
-    .modal-content {
-      background: #2c2c2c;
-      padding: 2rem;
-      border-radius: 10px;
-      width: 400px;
-      text-align: center;
-      position: relative;
-    }
+.modal-content {
+  background: #2c2c2c;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
 
-    .close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #bb86fc;
-    }
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #007bff;
+}
 
-    .modal-content img {
-      width: 100%;
-      height: 200px;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      object-fit: cover;
-    }
+.modal-content img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
 
-    .modal-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
+.modal-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
 
-    .modal-content p {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
+.modal-content p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
 
-    .modal-content .cost {
-      font-size: 1.2rem;
-      color: #bb86fc;
-    }
+.modal-content .cost {
+  font-size: 1.2rem;
+  color: #007bff;
+}
 
-    .modal-content .offer-price {
-      font-size: 1.2rem;
-      color: #4caf50;
-    }
+.modal-content .offer-price {
+  font-size: 1.2rem;
+  color: #4caf50;
+}
 
-    .modal-content button {
-      background: linear-gradient(135deg, #6200ea, #bb86fc);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      margin-top: 1rem;
-    }
+.modal-content button {
+  background: linear-gradient(135deg, #000000, #007bff);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-top: 1rem;
+}
 
-    .modal-content button:hover {
-      transform: scale(1.1);
-    }
+.modal-content button:hover {
+  transform: scale(1.1);
+}
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: linear-gradient(135deg, #6200ea, #bb86fc);
-      color: white;
-      margin-top: 2rem;
-    }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #000000, #007bff);
+  color: white;
+  margin-top: 2rem;
+}
 
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
   </style>
 </head>
 <body>
