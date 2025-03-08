@@ -359,12 +359,14 @@ footer {
   color: white;
   margin-top: 2rem;
 }
-    .cube-container {
+   .cube-container {
   width: 200px;
   height: 200px;
   perspective: 800px;
   margin: 50px auto;
   transition: 0.8s ease-out;
+  position: absolute; /* or relative */
+  left: 0; /* Adjust as needed */
 }
 
 .cube-container:hover {
@@ -466,16 +468,7 @@ footer {
   <main>
     <!-- From Uiverse.io by Subaashbala --> 
 <!-- From Uiverse.io by Codewithvinay --> 
- <div class="cube-container">
-  <div class="cube">
-    <div class="face front"><span>CYBERSECURITY</span></div>
-    <div class="face back">SOFTWARE PROJECTS</div>
-    <div class="face right">MINI PROJECTS </div>
-    <div class="face left">...HARDWAREPROJECTS</div>
-    <div class="face top">MAIN PROJECTS</div>
-    <div class="face bottom">SERVICES</div>
-  </div>
-</div>
+
     <!-- Home Section -->
     <section id="home" class="hero">
       <h2>Welcome to EdgeLabs</h2>
